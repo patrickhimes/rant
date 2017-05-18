@@ -1,0 +1,13 @@
+<div>
+    
+  <label>Rant here:</label> <input #rantText (keyup.enter)="add(rantText.value); rantText.value=''" />
+  <button (click)="add(rantText.value); rantText.value=''">
+    Add
+  </button>
+</div>
+
+<ul class="rants">
+  <li *ngFor="let rant of rants">
+    {{rant.message}}
+  </li>
+</ul>

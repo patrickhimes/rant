@@ -7,7 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http");
+// Imports for loading & configuring the in-memory web api
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var in_memory_data_service_1 = require("./in-memory-data.service");
 var app_component_1 = require("./app.component");
+var rants_component_1 = require("./rants.component");
+var rant_service_1 = require("./rant.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -15,8 +21,13 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent],
+        imports: [
+            platform_browser_1.BrowserModule,
+            http_1.HttpModule,
+            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
+        ],
+        declarations: [app_component_1.AppComponent, rants_component_1.RantsComponent],
+        providers: [rant_service_1.RantService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
