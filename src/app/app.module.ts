@@ -9,6 +9,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { AppComponent }  from './app.component';
 import { RantsComponent } from './rants.component';
 import { RantService } from './rant.service';
+import { ReversePipe } from './reverse.pipe';
 
 @NgModule({
   imports:      [ 
@@ -16,7 +17,7 @@ import { RantService } from './rant.service';
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService), 
   ],
-  declarations: [ AppComponent, RantsComponent ],
+  declarations: [ AppComponent, RantsComponent, ReversePipe ],
   providers: [ RantService ],
   bootstrap:    [ AppComponent ]
 })

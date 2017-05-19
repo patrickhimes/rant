@@ -14,6 +14,7 @@ var in_memory_data_service_1 = require("./in-memory-data.service");
 var app_component_1 = require("./app.component");
 var rants_component_1 = require("./rants.component");
 var rant_service_1 = require("./rant.service");
+var reverse_pipe_1 = require("./reverse.pipe");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,7 +27,7 @@ AppModule = __decorate([
             http_1.HttpModule,
             angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
         ],
-        declarations: [app_component_1.AppComponent, rants_component_1.RantsComponent],
+        declarations: [app_component_1.AppComponent, rants_component_1.RantsComponent, reverse_pipe_1.ReversePipe],
         providers: [rant_service_1.RantService],
         bootstrap: [app_component_1.AppComponent]
     })

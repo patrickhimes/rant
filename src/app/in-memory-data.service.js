@@ -3,9 +3,7 @@ var InMemoryDataService = (function () {
     function InMemoryDataService() {
     }
     InMemoryDataService.prototype.createDb = function () {
-        var rants = [
-            { message: 'just rant' }
-        ];
+        var rants = [];
         return { rants: rants };
     };
     return InMemoryDataService;
